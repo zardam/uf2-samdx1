@@ -9,8 +9,8 @@
 
 #define BOARD_ID "SAMD21G18A-Zero-v0"
 
-//#define USB_VID 0x2341
-//#define USB_PID 0x024D
+#define USB_VID 0x0451
+#define USB_PID 0xe01f
 
 #define LED_PIN PIN_PA17
 #define LED_TX_PIN PIN_PA27

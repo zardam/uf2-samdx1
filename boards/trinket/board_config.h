@@ -10,8 +10,8 @@
 #define INDEX_URL "https://adafru.it/trinketm0"
 #define BOARD_ID "SAMD21E18A-Trinket-v0"
 
-#define USB_VID 0x239A
-#define USB_PID 0x0016
+#define USB_VID 0x0451
+#define USB_PID 0xe01f
 
 #define LED_PIN PIN_PA10
 //#define LED_TX_PIN PIN_PA27
