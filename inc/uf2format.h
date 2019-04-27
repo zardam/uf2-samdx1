@@ -9,7 +9,8 @@
 // if you increase that, you will also need to update the linker script file
 #define APP_START_ADDRESS 0x00002000
 
-#define UF2_MAGIC_START0 0x0A324655UL // "UF2\n"
+#define UF2_MAGIC_START0_REAL 0x0A324655UL // "UF2\n"
+#define UF2_MAGIC_START0 0x0A324755UL // "UF3\n"
 #define UF2_MAGIC_START1 0x9E5D5157UL // Randomly selected
 #define UF2_MAGIC_END 0x0AB16F30UL    // Ditto
 
@@ -60,6 +61,12 @@ typedef struct {
 static inline bool is_uf2_block(void *data) {
     UF2_Block *bl = (UF2_Block *)data;
     return bl->magicStart0 == UF2_MAGIC_START0 && bl->magicStart1 == UF2_MAGIC_START1 &&
+           bl->magicEnd == UF2_MAGIC_END;
+}
+
+static inline bool is_real_uf2_block(void *data) {
+    UF2_Block *bl = (UF2_Block *)data;
+    return bl->magicStart0 == UF2_MAGIC_START0_REAL && bl->magicStart1 == UF2_MAGIC_START1 &&
            bl->magicEnd == UF2_MAGIC_END;
 }
 
